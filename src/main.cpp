@@ -19,12 +19,18 @@ struct Pair swapper(int *x, int *y) {
 }
 
 int main() {
-	int a = 1;
-	int b = 2;
+	int a = 0;
+	int b = 0;
+
+	printf("Enter the Value of First Variable: ");
+	scanf("%d", &a);
+
+	printf("Enter the Value of Second Variable: ");
+	scanf("%d", &b);
 
 	struct Pair swapped = swapper(&a, &b);
 
-	printf("a = %d\nb = %d\n", swapped.a, swapped.b);
+	printf("First Variable = %d\nSecond Variable = %d\n", swapped.a, swapped.b);
 
 	return 0;
 }
