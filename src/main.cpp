@@ -1,21 +1,9 @@
 #include <stdio.h>
 
-struct Pair {
-	int a;
-	int b;
-};
-
-struct Pair swapper(int *x, int *y) {
-	struct Pair swapped;
-
+void swapper(int *x, int *y) {
 	int temp = *x;
 	*x = *y;
 	*y = temp;
-
-	swapped.a = *x;
-	swapped.b = *y;
-
-	return (struct Pair){*x, *y};
 }
 
 int main() {
@@ -28,9 +16,9 @@ int main() {
 	printf("Enter the Value of Second Variable: ");
 	scanf("%d", &b);
 
-	struct Pair swapped = swapper(&a, &b);
+	swapper(&a, &b);
 
-	printf("First Variable = %d\nSecond Variable = %d\n", swapped.a, swapped.b);
+	printf("First Variable = %d\nSecond Variable = %d\n", a, b);
 
 	return 0;
 }
