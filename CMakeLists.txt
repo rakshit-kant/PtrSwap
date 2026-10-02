@@ -1,14 +1,18 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.20)
 
-set(CMAKE_C_COMPILER gcc)
+project(PtrSwap LANGUAGES C)
 
-project(PtrSwap)
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_LINKER_TYPE LLD)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(PtrSwap src/main.cpp)
+add_executable(PtrSwap src/main.c)
+
+target_compile_features(PtrSwap PRIVATE c_std_23)
 
 target_compile_options(PtrSwap PRIVATE
     -Wall
     -Wextra
-    -pedantic
+    -Wpedantic
     -O2
 )
